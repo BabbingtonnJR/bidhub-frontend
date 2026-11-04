@@ -49,7 +49,7 @@ Para apontar para a nuvem, crie `apps/shell/.env` a partir de `apps/shell/.env.e
 
 | Variável | Exemplo |
 |---|---|
-| `VITE_API_URL` | `https://<apim>.azure-api.net/api` |
+| `VITE_API_URL` | `https://bidhub-apim-bjr.azure-api.net/api` |
 | `VITE_API_KEY` | chave de assinatura do APIM |
 | `VITE_MF_LEILOES_URL` / `VITE_MF_FINANCEIRO_URL` | URL do `remoteEntry.js` de cada MF |
 
@@ -70,11 +70,21 @@ npm test                 # testes do api-client (Vitest): rotas, chave do Gatewa
 
 ## Endereços publicados
 
-Preencher depois da implantação (os mesmos endereços vão na Seção 7.3 do arc42).
+Tudo na Azure (West US 2) e no MongoDB Atlas (São Paulo). Os mesmos endereços estão na Seção 7.3 do arc42.
 
 | Item | URL |
 |---|---|
-| Front-end | https://<front>.azurestaticapps.net |
+| Front-end | https://ashy-sea-09b9cfb1e.3.azurestaticapps.net |
+| API Gateway (APIM) | https://bidhub-apim-bjr.azure-api.net/api (cabeçalho `Ocp-Apim-Subscription-Key`) |
+| BFF | https://bidhub-bff.happydesert-9360b05e.westus2.azurecontainerapps.io |
+| Swagger do BFF | https://bidhub-bff.happydesert-9360b05e.westus2.azurecontainerapps.io/docs |
+| Leilão Service | https://bidhub-leilao-service.happydesert-9360b05e.westus2.azurecontainerapps.io |
+| Swagger do Leilão Service | https://bidhub-leilao-service.happydesert-9360b05e.westus2.azurecontainerapps.io/docs |
+| Eventos (AsyncAPI) | https://bidhub-leilao-service.happydesert-9360b05e.westus2.azurecontainerapps.io/docs/eventos |
+| Comissão Service | https://bidhub-comissao-service.happydesert-9360b05e.westus2.azurecontainerapps.io |
+| Swagger do Comissão Service | https://bidhub-comissao-service.happydesert-9360b05e.westus2.azurecontainerapps.io/docs |
+| Function Calcular Comissão | https://bidhub-fn-bjr.azurewebsites.net/api/calcular-comissao (exige `?code=<chave>`) |
+| Imagens Docker | https://hub.docker.com/u/babbingtonnjr |
 
 ## Repositórios do projeto
 
