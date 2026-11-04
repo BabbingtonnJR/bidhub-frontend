@@ -1,0 +1,27 @@
+{
+  "name": "bidhub-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BidHub - Shell + Microfrontends (React + Vite + Module Federation)",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "npm run build -w apps/mf-leiloes && npm run build -w apps/mf-financeiro && npm run build -w apps/shell",
+    "preview": "concurrently -n leiloes,financeiro,shell \"npm run preview -w apps/mf-leiloes\" \"npm run preview -w apps/mf-financeiro\" \"npm run preview -w apps/shell\"",
+    "local": "npm run build && npm run preview",
+    "build:site": "node scripts/montar-site.js",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.4.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^10.0.6",
+    "vite": "^6.4.5",
+    "vitest": "^5.1.0"
+  }
+}

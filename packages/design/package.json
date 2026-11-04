@@ -1,0 +1,1 @@
+{ "name": "@bidhub/design", "version": "1.0.0", "private": true, "exports": { "./estilos.css": "./estilos.css" } }
